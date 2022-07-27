@@ -1,0 +1,48 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: rgb(157, 157, 157);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: White;
+  height: 500px;
+  width: 500px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+/* .square {
+  width: 25px;
+  height: 25px;
+} */
+
+footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
