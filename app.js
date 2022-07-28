@@ -4,14 +4,21 @@ const eraseBtn = document.querySelector("#erase");
 const clearBtn = document.querySelector("#clear");
 const colorBtn = document.querySelector("#color");
 const colorPicker = document.querySelector("#colorPicker");
-
+// const pixelSize = document.querySelector("#pixelSize");
 function Prompt() {
-    let number = prompt("Choose number between 5 - 65");
-    if (number >= 5 && number <= 65) {
-        makeGrid(number);
+    let input = prompt("Choose number between 5 - 65");
+    if (input >= 5 && input <= 65) {
+        makeGrid(input);
+    }
+    else {
+        do {
+            input = prompt("Choose number between 5 - 65");
+        } while (input < 5 || input > 66)
+        makeGrid(input);
     }
 }
 Prompt()
+
 function makeGrid(num) {
     for (let i = 0; i < num; i++) {
         for (let j = 0; j < num; j++) {
@@ -23,11 +30,19 @@ function makeGrid(num) {
         }
     }
 }
-
 const squares = document.querySelectorAll(".square");
+
+// not sure why this doesn't work // check back after styling
+// pixelSize.addEventListener("input", () => {
+//     for (let square of squares) {
+//         square.remove();
+//     }
+//     makeGrid(pixelSize.valueAsNumber)
+// })
+
 for (let square of squares) {
     square.addEventListener("mouseover", () => {
-        square.style.backgroundColor = "black";
+        square.style.backgroundColor = colorPicker.value;
     })
 }
 rgbBtn.addEventListener("click", () => {
